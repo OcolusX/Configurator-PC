@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="3">
+    <TextView android:gravity="start" android:id="@+id/price_store" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/store" android:layout_weight="1" android:paddingStart="1dp"/>
+    <TextView android:textSize="12sp" android:textStyle="italic" android:gravity="center" android:id="@+id/price_date" android:layout_width="0dp" android:layout_height="match_parent" android:text="@string/date_01" android:layout_weight="1"/>
+    <TextView android:textStyle="bold" android:gravity="end" android:id="@+id/price_price" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/price" android:layout_weight="1" android:paddingEnd="1dp"/>
+</LinearLayout>

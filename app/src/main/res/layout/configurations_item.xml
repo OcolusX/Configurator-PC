@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:orientation="vertical" android:id="@+id/configurations_item_layout" android:background="@drawable/configuration_item_bg" android:padding="5dp" android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10dp" android:foreground="?android:attr/selectableItemBackground" android:weightSum="1" android:layout_marginStart="5dp" android:layout_marginEnd="5dp" android:backgroundTint="@color/white">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="1">
+        <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/configurations_item_name" android:clickable="false" android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/configuration_name" android:layout_weight="1"/>
+        <ImageView android:id="@+id/configurations_item_icon" android:layout_width="50dp" android:layout_height="50dp" app:srcCompat="@drawable/ic_case"/>
+    </LinearLayout>
+    <View android:id="@+id/view7" android:background="@color/black" android:layout_width="match_parent" android:layout_height="1px"/>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="3dp">
+        <TextView android:textSize="16sp" android:textStyle="bold" android:id="@+id/configurations_item_average_price" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/average_price"/>
+        <TextView android:textSize="16sp" android:id="@+id/configurations_item_price" android:layout_width="wrap_content" android:layout_height="match_parent" android:text="@string/price" android:layout_marginStart="10dp"/>
+    </LinearLayout>
+</LinearLayout>

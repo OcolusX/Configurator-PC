@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt">
+    <item android:icon="@drawable/ic_bottom_nav_menu_store" android:id="@+id/navigation_store" android:title="@string/title_store"/>
+    <item android:icon="@drawable/ic_bottom_nav_menu_configurations" android:id="@+id/navigation_configurations" android:title="@string/title_configurations"/>
+    <item android:icon="@drawable/ic_bottom_nav_menu_community" android:id="@+id/navigation_community" android:title="@string/title_community"/>
+</menu>

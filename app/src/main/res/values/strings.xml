@@ -1,3 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Configurator-PC</string>
+
+    <string name="app_name">Configurator\nPC</string>
+
+    <string name="CPU">Processor</string>
+    <string name="Case">Case</string>
+    <string name="Cooler">Cooler</string>
+    <string name="Graphics_card">Graphic card</string>
+    <string name="HDD1">HDD drive 1</string>
+    <string name="HDD2">HDD drive 2</string>
+    <string name="Motherboard">Motherboard</string>
+    <string name="Power_supply">Power supply</string>
+    <string name="RAM">RAM</string>
+    <string name="SSD">SSD drive</string>
+    <string name="add_to_configuration">Add to configuration</string>
+    <string name="attribute_name">Attribute name</string>
+    <string name="attribute_value">Attribute value</string>
+    <string name="attributes">Attributes</string>
+    <string name="average_price">Average price:</string>
+    <string name="cancel">Cancel</string>
+    <string name="component_name">Component name</string>
+    <string name="configuration_name">My configuration</string>
+    <string name="confirmation">Are you sure?</string>
+    <string name="create_configuration">Create!</string>
+    <string name="date">Date</string>
+    <string name="date_01">01.01.2022</string>
+    <string name="delete">Delete</string>
+    <string name="delete_configuration">Delete configuration</string>
+    <string name="description">Description</string>
+    <string name="enter_configuration_name">Enter configuration name</string>
+    <string name="item_name">Name…</string>
+
+    <string name="menu_item_delete_configuration">delete configuration</string>
+    <string name="menu_item_edit_name">edit name</string>
+
+    <string name="price">Price</string>
+    <string name="price_rub">р.</string>
+    <string name="prices">Prices</string>
+    <string name="remove_from_configuration">Remove from configuration</string>
+    <string name="rename">Rename</string>
+    <string name="rename_configuration">Rename configuration</string>
+    <string name="store">Store</string>
+    <string name="tab_CPU">Processors</string>
+    <string name="tab_HDD">HDD drives</string>
+    <string name="tab_RAM">RAM`s</string>
+    <string name="tab_SSD">SSD drives</string>
+    <string name="tab_case">Cases</string>
+    <string name="tab_cooler">Coolers</string>
+    <string name="tab_graphics_card">Graphics card</string>
+    <string name="tab_motherboard">Motherboards</string>
+    <string name="tab_power_supply">Power supplies</string>
+    <string name="title_community">Community</string>
+    <string name="title_configurations">My configurations</string>
+    <string name="title_store">Store</string>
 </resources>

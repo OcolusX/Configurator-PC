@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:id="@+id/mobile_navigation" app:startDestination="@+id/navigation_configurations">
+    <fragment android:label="@string/title_store" android:name="com.example.configurator_pc.ui.store.StoreFragment" android:id="@+id/navigation_store">
+        <action android:id="@+id/action_navigation_store_to_storeItemDescriptionFragment" app:destination="@+id/storeItemDescriptionFragment"/>
+        <argument android:name="page" android:defaultValue="-1" app:argType="integer"/>
+        <argument android:name="configurationPosition" android:defaultValue="-1" app:argType="integer"/>
+    </fragment>
+    <fragment android:label="@string/title_configurations" android:name="com.example.configurator_pc.ui.configurations.ConfigurationsFragment" android:id="@+id/navigation_configurations">
+        <action android:id="@+id/action_navigation_configurations_to_editConfigurationFragment" app:destination="@+id/editConfigurationFragment"/>
+    </fragment>
+    <fragment android:label="@string/title_community" android:name="com.example.configurator_pc.ui.community.CommunityFragment" android:id="@+id/navigation_community"/>
+    <fragment android:label="@string/title_configurations" android:name="com.example.configurator_pc.ui.configurations.edit_configuration.EditConfigurationFragment" android:id="@+id/editConfigurationFragment">
+        <argument android:name="position" android:defaultValue="0" app:argType="integer"/>
+        <action android:id="@+id/action_editConfigurationFragment_to_storeItemDescriptionFragment" app:destination="@+id/storeItemDescriptionFragment"/>
+    </fragment>
+    <fragment android:label="@string/title_store" android:name="com.example.configurator_pc.ui.store.item_description.StoreItemDescriptionFragment" android:id="@+id/storeItemDescriptionFragment">
+        <argument android:name="position" android:defaultValue="-1" app:argType="integer"/>
+        <argument android:name="congigurationPosition" android:defaultValue="-1" app:argType="integer"/>
+        <argument android:name="componentId" android:defaultValue="-1" app:argType="integer"/>
+    </fragment>
+    <action android:id="@+id/action_global_navigation_store" app:destination="@+id/navigation_store"/>
+</navigation>
