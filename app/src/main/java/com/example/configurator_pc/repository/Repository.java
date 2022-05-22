@@ -35,7 +35,7 @@ public class Repository {
     public static final String HARDPRICE_URL = "https://hardprice.ru";
     private static Repository INSTANCE = null;
     private static final String THREAD_NAME = "ServerConnectionThread";
-    private static final String url = "https://0a6a-185-81-66-97.eu.ngrok.io";
+    private static final String url = "https://4577-185-81-66-97.eu.ngrok.io";
     private Thread connectionThread;
     private final HttpConnection httpConnection;
 

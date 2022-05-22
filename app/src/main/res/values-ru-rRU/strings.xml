@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_community">Сообщество</string>
+    <string name="title_configurations">Мои сборки</string>
+    <string name="title_store">Магазин</string>
+    <string name="title_item_description">Описание товара</string>
+    <string name="cancel">Отменить</string>
+    <string name="CPU">Процессор</string>
+    <string name="Case">Корпус</string>
+    <string name="Cooler">Кулер</string>
+    <string name="Graphics_card">Видеокарта</string>
+    <string name="HDD1">HDD диск 1</string>
+    <string name="HDD2">HDD диск 2</string>
+    <string name="Motherboard">Материнская плата</string>
+    <string name="Power_supply">Блок питания</string>
+    <string name="RAM">Оперативная память</string>
+    <string name="SSD">SSD диск</string>
+    <string name="delete_configuration">Удалить сборку</string>
+    <string name="rename_configuration">Переименовать сборку</string>
+    <string name="confirmation_delete">Вы уверены?</string>
+    <string name="on_button_delete_text">Удалить!</string>
+    <string name="on_button_rename_text">Переименовать!</string>
+    <string name="configuration_name">Моя сборка</string>
+    <string name="average_price">Средняя цена:</string>
+    <string name="enter_configuration_name">Введите название сборки</string>
+    <string name="create_configuration">Создать!</string>
+    <string name="tab_CPU">Процессоры</string>
+    <string name="tab_HDD">HDD диски</string>
+    <string name="tab_RAM">Опер. память</string>
+    <string name="tab_SSD">SSD диски</string>
+    <string name="tab_case">Корпуса</string>
+    <string name="tab_cooler">Кулеры</string>
+    <string name="tab_graphics_card">Видеокарты</string>
+    <string name="tab_motherboard">Мат. платы</string>
+    <string name="tab_power_supply">Блоки питания</string>
+    <string name="attributes">Характеристики</string>
+    <string name="prices">Цены</string>
+    <string name="add_to_configuration">Добавить в сборку</string>
+    <string name="remove_from_configuration">Удалить из сборки</string>
+</resources>

@@ -83,7 +83,7 @@ public class Configuration {
                 this.types[i]++;
             } else {
                 for (int j = 0; j < this.componentList.size(); j++) {
-                    if (this.componentList.get(j).getType() == component.getType()) {
+                    if (this.componentList.get(j).getType() == type) {
                         this.componentList.remove(j);
                         this.componentList.add(component);
                     }
@@ -93,12 +93,12 @@ public class Configuration {
     }
 
     public void removeComponentById(int id) {
-        for (int i = 0; i < this.componentList.size(); i++) {
-            Component component = this.componentList.get(i);
+        for (int i = 0; i < componentList.size(); i++) {
+            Component component = componentList.get(i);
             if (component.getId() == id) {
-                this.componentList.remove(i);
-                this.types[i]--;
-                return;
+                componentList.remove(i);
+                types[component.getType().getId() - 1]--;
+                break;
             }
         }
     }

@@ -115,7 +115,6 @@ public class StoreFragment extends Fragment {
         // сборки и лишь открыл (как бы в отдельном окошке) запрошенную по клику вкладку.
         // В то же время, при обычном переходе через BottomNavMenu открывается полноценный магазин;
         storeTabs = root.findViewById(R.id.store_tabs);
-        ;
         if (configurationPosition != -1) {
             storeTabs.removeAllViews();
             MainActivity activity = (MainActivity) getActivity();
@@ -136,54 +135,8 @@ public class StoreFragment extends Fragment {
         return root;
     }
 
-    /* renamed from: com.example.configurator_pc.ui.store.StoreFragment$3 */
-    static /* synthetic */ class C00023 {
-        static final /* synthetic */ int[] $SwitchMap$com$example$configurator_pc$model$ComponentType;
-
-        static {
-            int[] iArr = new int[ComponentType.values().length];
-            $SwitchMap$com$example$configurator_pc$model$ComponentType = iArr;
-            try {
-                iArr[ComponentType.MOTHERBOARD.ordinal()] = 1;
-            } catch (NoSuchFieldError e) {
-            }
-            try {
-                $SwitchMap$com$example$configurator_pc$model$ComponentType[ComponentType.CPU.ordinal()] = 2;
-            } catch (NoSuchFieldError e2) {
-            }
-            try {
-                $SwitchMap$com$example$configurator_pc$model$ComponentType[ComponentType.COOLER.ordinal()] = 3;
-            } catch (NoSuchFieldError e3) {
-            }
-            try {
-                $SwitchMap$com$example$configurator_pc$model$ComponentType[ComponentType.GRAPHICS_CARD.ordinal()] = 4;
-            } catch (NoSuchFieldError e4) {
-            }
-            try {
-                $SwitchMap$com$example$configurator_pc$model$ComponentType[ComponentType.RAM.ordinal()] = 5;
-            } catch (NoSuchFieldError e5) {
-            }
-            try {
-                $SwitchMap$com$example$configurator_pc$model$ComponentType[ComponentType.HDD.ordinal()] = 6;
-            } catch (NoSuchFieldError e6) {
-            }
-            try {
-                $SwitchMap$com$example$configurator_pc$model$ComponentType[ComponentType.SSD.ordinal()] = 7;
-            } catch (NoSuchFieldError e7) {
-            }
-            try {
-                $SwitchMap$com$example$configurator_pc$model$ComponentType[ComponentType.CASE.ordinal()] = 8;
-            } catch (NoSuchFieldError e8) {
-            }
-            try {
-                $SwitchMap$com$example$configurator_pc$model$ComponentType[ComponentType.POWER_SUPPLY.ordinal()] = 9;
-            } catch (NoSuchFieldError e9) {
-            }
-        }
-    }
-
-    private int getTitle(ComponentType page2) {
-        switch (C00023.$SwitchMap$com$example$configurator_pc$model$ComponentType[page2.ordinal()]) {
+    private int getTitle(ComponentType page) {
+        switch (page.getId()) {
             case 1:
                 return R.string.tab_motherboard;
             case 2:
@@ -235,14 +188,15 @@ public class StoreFragment extends Fragment {
             }
         }
 
+        StoreFragment fragment = this;
+
         // Также реализуем переходы по вкладкам при помощи слушателя нажатия
         this.storeTabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 
             // При нажатии на новую вкладку запрашиваем загрузку компонентов из ViewModel
             public void onTabSelected(TabLayout.Tab tab) {
-                observeDataChange(storeViewModel.loadData(
-                        ComponentType.getById(tab.getPosition() + 1))
-                );
+                page = ComponentType.getById(tab.getPosition() + 1);
+                observeDataChange(storeViewModel.loadData(page));
             }
 
             // При закрытии текущей вкладки удаляем список компонентов из адаптера

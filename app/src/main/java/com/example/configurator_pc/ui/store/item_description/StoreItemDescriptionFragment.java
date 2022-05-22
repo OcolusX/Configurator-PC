@@ -65,11 +65,14 @@ public class StoreItemDescriptionFragment extends Fragment {
             addButton.setVisibility(View.VISIBLE);
             removeButton.setVisibility(View.INVISIBLE);
             addButton.setOnClickListener(v -> onAddButtonClick());
-            ((MainActivity) requireActivity()).setSelectedItemId(R.id.navigation_store);
         } else {
             addButton.setVisibility(View.INVISIBLE);
             removeButton.setVisibility(View.VISIBLE);
             removeButton.setOnClickListener(v -> onRemoveButtonClick());
+        }
+        if(configurationPosition == -1) {
+            ((MainActivity) requireActivity()).setSelectedItemId(R.id.navigation_store);
+        } else {
             ((MainActivity) requireActivity()).setSelectedItemId(R.id.navigation_configurations);
         }
 
@@ -116,7 +119,7 @@ public class StoreItemDescriptionFragment extends Fragment {
 
     private void createView(LayoutInflater inflater, ViewGroup container, View root) {
         // Устанавливаем title для ActionBAr
-        ((MainActivity) requireActivity()).getSupportActionBar().setTitle(R.string.description);
+        ((MainActivity) requireActivity()).getSupportActionBar().setTitle(R.string.title_item_description);
 
         // Устаналиваем имя компонента и загружаем его иконку
         ((TextView) root.findViewById(R.id.store_item_description_name)).setText(component.getName());
@@ -161,9 +164,9 @@ public class StoreItemDescriptionFragment extends Fragment {
             } else {
                 priceText.setText(String.format(
                         Locale.getDefault(),
-                        "%,.2f %s",
+                        "%,.2f %c",
                         priceValue,
-                        getString(R.string.price_rub)
+                        price.getCurrency().getSign()
                 ));
             }
             pricesLayout.addView(view);

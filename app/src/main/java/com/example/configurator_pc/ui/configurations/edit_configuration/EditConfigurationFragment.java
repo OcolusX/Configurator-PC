@@ -22,10 +22,11 @@ import com.example.configurator_pc.databinding.FragmentEditConfigurationBinding;
 import com.example.configurator_pc.model.Component;
 import com.example.configurator_pc.model.ComponentType;
 import com.example.configurator_pc.model.Configuration;
+import com.example.configurator_pc.model.Currency;
+import com.example.configurator_pc.repository.Repository;
 import com.example.configurator_pc.ui.configurations.ConfigurationsViewModel;
 import com.example.configurator_pc.ui.configurations.ConfigurationsViewModelFactory;
 import com.example.configurator_pc.ui.store.StoreFragment;
-import com.example.configurator_pc.repository.Repository;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -90,33 +91,36 @@ public class EditConfigurationFragment extends Fragment {
         root.findViewById(R.id.delete_configuration_button)
                 .setOnClickListener(v -> onDeleteConfigurationButton());
 
+
+        configurationsViewModel = new ViewModelProvider(
+                requireActivity(),
+                new ConfigurationsViewModelFactory(requireActivity().getApplication())
+        ).get(ConfigurationsViewModel.class);
         // Получаем сборку по переданной позиции в списке в ViewModel в качестве аргумента
         Bundle arguments = getArguments();
         if (arguments != null) {
             position = arguments.getInt("TAG_POSITION");
-            configurationsViewModel = new ViewModelProvider(
-                    requireActivity(),
-                    new ConfigurationsViewModelFactory(requireActivity().getApplication())
-            ).get(ConfigurationsViewModel.class);
-
-            MutableLiveData<List<Configuration>> data = configurationsViewModel.getData();
-            if (data != null) {
-                // Получаем нужную сборку
-                configuration = data.getValue().get(position);
-                ((TextView) root.findViewById(R.id.text_configuration_name))
-                        .setText(configuration.getName());
-                // отображаем все компоненты сборки
-                setupComponents(root);
-            }
+        } else {
+            position = configurationsViewModel.getLastPosition();
         }
-
+        MutableLiveData<List<Configuration>> data = configurationsViewModel.getData();
+        if (data != null) {
+            // Получаем нужную сборку
+            configuration = data.getValue().get(position);
+            ((TextView) root.findViewById(R.id.text_configuration_name))
+                    .setText(configuration.getName());
+            // отображаем все компоненты сборки
+            setupComponents(root);
+        }
         // Отображаем среднюю цену сборки
-        ((TextView) root.findViewById(R.id.edit_configuration_price)).setText(String.format(
-                Locale.getDefault(),
-                "%,.0f %s",
-                configuration.getAveragePrice(),
-                getString(R.string.price_rub)
-        ));
+        ((TextView) root.findViewById(R.id.edit_configuration_price)).
+
+                setText(String.format(
+                        Locale.getDefault(),
+                        "%,.0f %c",
+                        configuration.getAveragePrice(),
+                        Currency.RUB.getSign()
+                ));
         return root;
     }
 
@@ -140,6 +144,7 @@ public class EditConfigurationFragment extends Fragment {
             edit.setOnClickListener(v -> {
                 // Не забываем снять флаг
                 save = false;
+                configurationsViewModel.savePosition(position);
                 // В качестве аргументов передаём позицию текущей сборки в списке ViewModel,
                 // а также id компонента, по которому кликнули
                 Bundle bundle = new Bundle();
@@ -188,7 +193,7 @@ public class EditConfigurationFragment extends Fragment {
         editName.setText(configuration.getName());
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setView(editName);
-        builder.setPositiveButton(R.string.rename, (dialog, which) -> {
+        builder.setPositiveButton(R.string.on_button_rename_text, (dialog, which) -> {
             // Проверяем, не совпадает ли новое имя с текущим и переименовываем текущую сборку
             String name = editName.getText().toString();
             if (!name.equals(configuration.getName())) {
@@ -206,8 +211,8 @@ public class EditConfigurationFragment extends Fragment {
     public void onDeleteConfigurationButton() {
         // При помощи диалогового окна запрашиваем подтверждение на удаление и удаляем сборку
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(R.string.confirmation);
-        builder.setPositiveButton(R.string.delete, ((dialog, which) -> {
+        builder.setTitle(R.string.confirmation_delete);
+        builder.setPositiveButton(R.string.on_button_delete_text, ((dialog, which) -> {
             configurationsViewModel.deleteConfiguration(position);
             // Не забываем снять флаг состояния
             save = false;

@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Configurator\nPC</string>
+    <!--****************** TITLES ******************-->
+    <string name="app_name" translatable="false">Configurator\nPC</string>
+    <string name="title_community">Community</string>
+    <string name="title_configurations">My configurations</string>
+    <string name="title_store">Store</string>
+    <string name="title_item_description">Item description</string>
 
+    <!--****************** GENERAL ******************-->
+    <string name="cancel">Cancel</string>
+
+    <!--************ EDIT_CONFIGURATION ************-->
+    <!-- EDIT LAYOUTS -->
     <string name="CPU">Processor</string>
     <string name="Case">Case</string>
     <string name="Cooler">Cooler</string>
@@ -13,34 +23,22 @@
     <string name="Power_supply">Power supply</string>
     <string name="RAM">RAM</string>
     <string name="SSD">SSD drive</string>
-    <string name="add_to_configuration">Add to configuration</string>
-    <string name="attribute_name">Attribute name</string>
-    <string name="attribute_value">Attribute value</string>
-    <string name="attributes">Attributes</string>
-    <string name="average_price">Average price:</string>
-    <string name="cancel">Cancel</string>
-    <string name="component_name">Component name</string>
-    <string name="configuration_name">My configuration</string>
-    <string name="confirmation">Are you sure?</string>
-    <string name="create_configuration">Create!</string>
-    <string name="date">Date</string>
-    <string name="date_01">01.01.2022</string>
-    <string name="delete">Delete</string>
+    <!-- BUTTONS -->
     <string name="delete_configuration">Delete configuration</string>
-    <string name="description">Description</string>
-    <string name="enter_configuration_name">Enter configuration name</string>
-    <string name="item_name">Name…</string>
-
-    <string name="menu_item_delete_configuration">delete configuration</string>
-    <string name="menu_item_edit_name">edit name</string>
-
-    <string name="price">Price</string>
-    <string name="price_rub">р.</string>
-    <string name="prices">Prices</string>
-    <string name="remove_from_configuration">Remove from configuration</string>
-    <string name="rename">Rename</string>
     <string name="rename_configuration">Rename configuration</string>
-    <string name="store">Store</string>
+    <string name="confirmation_delete">Are you sure?</string>
+    <string name="on_button_delete_text">Delete!</string>
+    <string name="on_button_rename_text">Rename!</string>
+
+    <!--************** CONFIGURATIONS **************-->
+    <string name="configuration_name">My configuration</string>
+    <string name="average_price">Average price:</string>
+    <!-- CREATE_CONFIGURATION_DIALOG-->
+    <string name="enter_configuration_name">Enter configuration name</string>
+    <string name="create_configuration">Create!</string>
+
+    <!--****************** STORE ******************-->
+    <!-- TABS -->
     <string name="tab_CPU">Processors</string>
     <string name="tab_HDD">HDD drives</string>
     <string name="tab_RAM">RAM`s</string>
@@ -50,7 +48,24 @@
     <string name="tab_graphics_card">Graphics card</string>
     <string name="tab_motherboard">Motherboards</string>
     <string name="tab_power_supply">Power supplies</string>
-    <string name="title_community">Community</string>
-    <string name="title_configurations">My configurations</string>
-    <string name="title_store">Store</string>
+    <!-- STORE_ITEM -->
+    <string name="item_name" translatable="false">Name…</string>
+    <string name="item_description" translatable="false">Description…</string>
+
+    <!--*********** STORE_ITEM_DESCRIPTION ***********-->
+    <string name="component_name" translatable="false">Component name</string>
+    <!-- ATTRIBUTES -->
+    <string name="attributes">Attributes</string>
+    <string name="attribute_name" translatable="false">Attribute name</string>
+    <string name="attribute_value" translatable="false">Attribute value</string>
+    <!-- PRICES -->
+    <string name="prices">Prices</string>
+    <string name="store_name" translatable="false">Store</string>
+    <string name="date_01" translatable="false">01.01.2022</string>
+    <string name="price" translatable="false">Price</string>
+    <!-- BUTTONS -->
+    <string name="add_to_configuration">Add to configuration</string>
+    <string name="remove_from_configuration">Remove from configuration</string>
+
+
 </resources>

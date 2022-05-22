@@ -28,6 +28,7 @@ public class ConfigurationsViewModel extends AndroidViewModel {
     private final MutableLiveData<User> user;               // Пользователь
 
     private Component fromStoreComponent = null;            // Компонент, переданный из магазина
+    private int lastPosition;
 
     public ConfigurationsViewModel(@NonNull Application application) {
         super(application);
@@ -110,5 +111,13 @@ public class ConfigurationsViewModel extends AndroidViewModel {
 
     public Component getFromStoreComponent() {
         return fromStoreComponent;
+    }
+
+    public int getLastPosition() {
+        return lastPosition;
+    }
+
+    public void savePosition(int position) {
+        lastPosition = position;
     }
 }

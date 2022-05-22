@@ -10,11 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
-
+;
 import com.example.configurator_pc.R;
 import com.example.configurator_pc.model.Component;
 import com.example.configurator_pc.model.ComponentType;
 import com.example.configurator_pc.model.Configuration;
+import com.example.configurator_pc.model.Currency;
 import com.example.configurator_pc.repository.Repository;
 import com.squareup.picasso.Picasso;
 
@@ -65,7 +66,7 @@ public class ConfigurationsAdapter extends RecyclerView.Adapter<ConfigurationsAd
     @Override
     public ConfigurationViewRow onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(com.example.configurator_pc.R.layout.configurations_item, parent, false);
+                .inflate(R.layout.configurations_item, parent, false);
         return new ConfigurationViewRow(view);
     }
 
@@ -93,7 +94,7 @@ public class ConfigurationsAdapter extends RecyclerView.Adapter<ConfigurationsAd
             Bundle bundle = new Bundle();
             bundle.putInt(ConfigurationsFragment.TAG_POSITION, position);
             NavHostFragment.findNavController(fragment).navigate(
-                    com.example.configurator_pc.R.id.action_navigation_configurations_to_editConfigurationFragment,
+                    R.id.action_navigation_configurations_to_editConfigurationFragment,
                     bundle
             );
         });
@@ -103,7 +104,7 @@ public class ConfigurationsAdapter extends RecyclerView.Adapter<ConfigurationsAd
                 Locale.getDefault(),
                 "%,.0f %s",
                 configuration.getAveragePrice(),
-                fragment.getString(com.example.configurator_pc.R.string.price_rub))
+                Currency.RUB.getSign())
         );
     }
 

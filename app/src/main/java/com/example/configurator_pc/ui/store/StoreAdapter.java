@@ -16,6 +16,7 @@ import com.example.configurator_pc.model.Component;
 import com.example.configurator_pc.repository.Repository;
 import com.squareup.picasso.Picasso;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreViewRow> {
@@ -74,8 +75,8 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreViewRow
     // Удаляет текущий список
     public void removeList() {
         if (componentList != null && !componentList.isEmpty()) {
-            componentList.clear();
             notifyItemRangeRemoved(0, componentList.size());
+            componentList.clear();
         }
     }
 

@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="@string/description"
+                android:text="@string/item_description"
                 android:textSize="10sp" />
         </LinearLayout>
     </LinearLayout>
