@@ -19,7 +19,7 @@
       </p>
     </h3>
     <h2>2. Как это выглядит 👀</h2>
-    ![image](https://user-images.githubusercontent.com/90719002/169754236-e5e9d7d3-8e7f-4448-8bfb-80f3f433cb52.png)
-
+    ![image](https://user-images.githubusercontent.com/90719002/169754841-bbd41f03-586c-4bde-82fa-05448f9164ca.png)
   </body>
 </html>
+
