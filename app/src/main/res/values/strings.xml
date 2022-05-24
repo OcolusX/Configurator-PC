@@ -10,6 +10,7 @@
 
     <!--****************** GENERAL ******************-->
     <string name="cancel">Cancel</string>
+    <string name="apply">Apply</string>
 
     <!--************ EDIT_CONFIGURATION ************-->
     <!-- EDIT LAYOUTS -->

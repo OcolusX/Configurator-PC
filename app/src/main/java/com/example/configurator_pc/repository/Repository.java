@@ -35,7 +35,7 @@ public class Repository {
     public static final String HARDPRICE_URL = "https://hardprice.ru";
     private static Repository INSTANCE = null;
     private static final String THREAD_NAME = "ServerConnectionThread";
-    private static final String url = "https://cf72-185-79-102-98.eu.ngrok.io";
+    private String url = null;
     private Thread connectionThread;
     private final HttpConnection httpConnection;
 
@@ -48,6 +48,10 @@ public class Repository {
             INSTANCE = new Repository(context);
         }
         return INSTANCE;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public boolean isConnecting() {

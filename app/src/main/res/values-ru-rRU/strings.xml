@@ -5,6 +5,7 @@
     <string name="title_store">Магазин</string>
     <string name="title_item_description">Описание товара</string>
     <string name="cancel">Отменить</string>
+    <string name="apply">Применить</string>
     <string name="CPU">Процессор</string>
     <string name="Case">Корпус</string>
     <string name="Cooler">Кулер</string>
